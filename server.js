@@ -110,9 +110,12 @@ app.put('/image',(req,res) => {
 });
 
 //LISTEN ON PORT 3000
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`App is running on port ${process.env.PORT}`);
-});
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
+// app.listen(process.env.PORT || 3000, () => {
+//     console.log(`App is running on port ${process.env.PORT}`);
+// });
 
 
 // Synchronous hash:
