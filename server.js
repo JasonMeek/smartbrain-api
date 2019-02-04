@@ -1,3 +1,5 @@
+//change the start to node server.js instead of nodemon for running in heroku
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt-nodejs');
