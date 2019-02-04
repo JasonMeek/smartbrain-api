@@ -19,37 +19,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// const randomID = () => {
-//     return (Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
-// }
-
-// const database = {
-//     users: [
-//         {
-//             id: "123",
-//             name: "John",
-//             email: "john@123.com",
-//             password: "hello",
-//             entries: 0,
-//             joined: new Date(),
-//         },
-//         {
-//             id: "1124",
-//             name: "Nohn",
-//             email: "Nohn@123.com",
-//             password: "world",
-//             entries: 0,
-//             joined: new Date(),
-//         }
-//     ]
-// };
-
-app.get("/",(req, res) => {
-    res.send("It is working");
-});
+app.get('/',(req, res) => { res.send("It is working") });
 
 // SIGNIN
-app.post("/signin",(req,res) => {
+app.post('/signin',(req,res) => {
     const { email, password } = req.body;
     if(!email || !password){
         return res.status(400).json("Incorrect form submission")
@@ -72,17 +45,10 @@ app.post("/signin",(req,res) => {
             }
         })
         .catch(err => res.status(400).json("Incorrect username or password"))
-    // if(req.body.email === database.users[0].email && req.body.password === database.users[0].password){
-    //     // res.json("Success");
-    //     res.json(database.users[0]);
-    // }
-    // else{
-    //     res.status(400).json("Error logging in!");
-    // }
 });
 
 // REGISTER
-app.post("/register",(req,res) => {
+app.post('/register',(req,res) => {
     const { email, name, password } = req.body;
     if(!email || !name || !password){
         return res.status(400).json("Incorrect form submission")
@@ -114,7 +80,7 @@ app.post("/register",(req,res) => {
 });
 
 //PROFILE:ID
-app.get("/profile/:id",(req,res)=>{
+app.get('/profile/:id',(req,res)=>{
     const { id } = req.params;
     // let found = false;
     db.select("*").from("users").where({
@@ -131,7 +97,7 @@ app.get("/profile/:id",(req,res)=>{
 });
 
 //IMAGE POST (user for ranking numbe rof images uploaded)
-app.put("/image",(req,res) => {
+app.put('/image',(req,res) => {
     const { id } = req.body;
     db("users").where("id", "=", id)
     .increment("entries", 1)
