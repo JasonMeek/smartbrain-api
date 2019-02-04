@@ -23,29 +23,29 @@ app.use(cors());
 //     return (Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
 // }
 
-const database = {
-    users: [
-        {
-            id: "123",
-            name: "John",
-            email: "john@123.com",
-            password: "hello",
-            entries: 0,
-            joined: new Date(),
-        },
-        {
-            id: "1124",
-            name: "Nohn",
-            email: "Nohn@123.com",
-            password: "world",
-            entries: 0,
-            joined: new Date(),
-        }
-    ]
-};
+// const database = {
+//     users: [
+//         {
+//             id: "123",
+//             name: "John",
+//             email: "john@123.com",
+//             password: "hello",
+//             entries: 0,
+//             joined: new Date(),
+//         },
+//         {
+//             id: "1124",
+//             name: "Nohn",
+//             email: "Nohn@123.com",
+//             password: "world",
+//             entries: 0,
+//             joined: new Date(),
+//         }
+//     ]
+// };
 
 app.get("/",(req, res) => {
-    res.send(database.users);
+    res.send("It is working");
 });
 
 // SIGNIN
