@@ -4,7 +4,7 @@
   "description": "��#\u0000 \u0000s\u0000m\u0000a\u0000r\u0000t\u0000b\u0000r\u0000a\u0000i\u0000n\u0000-\u0000a\u0000p\u0000i\u0000\r\u0000 \u0000#\u0000 \u0000s\u0000m\u0000a\u0000r\u0000t\u0000b\u0000r\u0000a\u0000i\u0000n\u0000-\u0000a\u0000p\u0000i\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
